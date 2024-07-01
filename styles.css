@@ -1,0 +1,210 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f9f9f9;
+}
+
+header,
+section {
+  width: 80%;
+  max-width: 1200px;
+  margin: 20px 0;
+}
+
+header {
+  text-align: center;
+}
+
+span{
+    padding-right: 5px;
+}
+
+.goal-cards {
+  margin: 20px 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  height: 25vh;
+}
+.goal-card {
+  margin: 20px 0;
+  perspective: 1000px;
+  width: 25%;
+  margin: 10px;
+  height: fit-content;
+}
+
+.goal-card-inner {
+  position: relative;
+  width: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s;
+}
+
+.goal-card:hover .goal-card-inner {
+  transform: rotateY(180deg);
+}
+
+.goal-card-front,
+.goal-card-back {
+  position: absolute;
+  width: 100%;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  padding: 20px;
+  text-align: left;
+}
+
+.goal-card-front {
+  background-color: #f2e6e4;
+}
+
+.goal-card-back {
+  background-color: #f5d4cb;
+  transform: rotateY(180deg);
+  padding: 0px 30px;
+}
+
+.goal h3 {
+  margin-bottom: 10px;
+  color: #bf4f2b;
+}
+
+.goal img {
+  width: 100px;
+  height: auto;
+}
+
+#personal-development .goal-card-front,
+#personal-development .goal-card-back {
+  background-color: #f5ede1;
+}
+
+#personal-development h3 {
+  color: #bf603b;
+}
+
+#career .goal-card-front,
+#career .goal-card-back {
+  background-color: #fff6e5;
+}
+
+#career h3 {
+  color: #bf702b;
+}
+
+#fitness .goal-card-front,
+#fitness .goal-card-back {
+  background-color: #e7f4eb;
+}
+
+#fitness h3 {
+  color: #2e7d32;
+}
+
+#financial .goal-card-front,
+#financial .goal-card-back {
+  background-color: #e3f2fd;
+}
+
+#financial h3 {
+  color: #1565c0;
+}
+
+#relationship .goal-card-front,
+#relationship .goal-card-back {
+  background-color: #f3e5f5;
+}
+
+#relationship h3 {
+  color: #7b1fa2;
+}
+#links{ display: flex;
+    justify-content: space-evenly;}
+
+#links a {
+  display: block;
+  margin: 10px 0;
+  color: #bf4f2b;
+  text-decoration: none;
+}
+
+#links a:hover {
+  text-decoration: underline;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+li {
+  list-style-type: none;
+  text-align: left;
+  padding: 5px 0;
+}
+
+
+#current-info {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  header,
+  section {
+    width: 95%;
+  }
+
+  #goals {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .goal-card {
+    width: 60vw;
+    margin: 0 auto;
+  }
+  .goal-cards {
+    margin: 20px;
+    height: 75vh;
+  }
+
+  .goal-card-back {
+    left: -40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .goal-card {
+    /* width: 60vw; */
+    margin: 0 5px;
+  }
+  .goal-cards {
+  
+    height: 100vh;
+  }
+
+
+  /* #skills .goal-card-back {
+z-index: 99px;
+  } */
+
+  .goal-card-back {
+  margin: 20px 0;
+  }
+
+  h2 {
+    font-size: large;
+    text-align: center;
+  }
+ 
+}

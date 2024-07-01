@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Tech Goals</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const updateTime = () => {
+          const now = new Date();
+          const utcOffset = 1; // UTC+1 for West Africa Time (WAT)
+          const utcOffsetMilliseconds = utcOffset * 60 * 60 * 1000; // convert hours to milliseconds
+          const currentTime = new Date(now.getTime() + utcOffsetMilliseconds);
+    
+          const hours = currentTime.getUTCHours();
+          const minutes = currentTime.getUTCMinutes();
+          const seconds = currentTime.getUTCSeconds();
+    
+          const formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    
+          document.getElementById("time").textContent = formattedTime;
+          document.getElementById("day").textContent = currentTime.toLocaleString(
+            "en-US",
+            { weekday: "long" }
+          );
+        };
+    
+        updateTime();
+        setInterval(updateTime, 1000);
+      });
+    </script>
+    
+    
+    
+  </head>
+  <body>
+    <header>
+      <h1>
+        <span data-testid="slackDisplayName">Ehm Ehs</span> Tech Goals for the
+        Next 2 Years
+      </h1>
+    </header>
+    <section id="goals">
+      <div class="goal-cards">
+        <div class="goal-card">
+          <div class="goal-card-inner" id="skills">
+            <div class="goal-card-front">
+              <h3>Technical Skills Development</h3>
+            </div>
+            <div class="goal-card-back">
+              <div>
+                <p>Advancing my React Skill</p>
+                <p>Learning GraphQL</p>
+                <p>Become better with the use of TypeScript</p>
+                <p>Better proficiency on testing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="goal-card">
+          <div class="goal-card-inner" id="personal-development">
+            <div class="goal-card-front">
+              <h3>Personal Development</h3>
+            </div>
+            <div class="goal-card-back">
+              <div>
+                <p>Network more</p>
+                <p>Develop my Soft Skills</p>
+                <p>Build more Personal Projects</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="goal-card">
+          <div class="goal-card-inner" id="career">
+            <div class="goal-card-front">
+              <h3>Career Development</h3>
+            </div>
+            <div class="goal-card-back">
+              <div>
+                <p>Contribute to Open Source</p>
+                <p>Freelancing</p>
+                <p>Learn more</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="current-info">
+      <img
+      data-testid="slackProfilePicture"
+      src="./dp.jpeg"
+      alt="Slack Profile Picture"
+    />
+    <p data-testid="slackEmail"> Email: salamimariam239@gmail.com</p>
+
+      
+      <p data-testid="currentDay">Done on <span id="day"></span></p> <p data-testid="currentTimeUTC">
+        By <span id="time"></span>
+      </p>
+  
+    </section>
+    <section id="links">
+      <a data-testid="hngLink" href="https://hng.tech/learn" target="_blank"
+        >HNG Learn</a
+      >
+      <a data-testid="keywordLink" href="https://keyword.dog" target="_blank"
+        >Keyword Dog</a
+      >
+      <a
+        data-testid="scrapeanywebLink"
+        href="https://scrapeanyweb.site"
+        target="_blank"
+        >Scrape Any Web</a
+      >
+    </section>
+  </body>
+</html>
